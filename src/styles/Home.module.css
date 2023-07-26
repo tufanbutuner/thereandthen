@@ -19,6 +19,11 @@
   font-size: 5rem;
 }
 
+.main > div > p > span {
+  color: white;
+  background-color: hotpink;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

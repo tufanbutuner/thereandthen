@@ -22,7 +22,9 @@ export default function Home() {
       <main className={`${styles.main} ${dmsans.className}`}>
         <div>
           <Image src={Logo} alt="Logo" width={200} />
-          <p>Web solutions for small businesses.</p>
+          <p>
+            Web solutions for <span>small businesses</span>.
+          </p>
         </div>
         <div className={`${styles.footer}`}>
           <div>
