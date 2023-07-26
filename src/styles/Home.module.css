@@ -7,6 +7,18 @@
   min-height: 100vh;
 }
 
+.main > div {
+  background-color: white;
+}
+
+.main > div > img {
+  margin: 1rem 0;
+}
+
+.main > div > p {
+  font-size: 5rem;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -29,14 +41,17 @@
     padding: 2rem;
   }
 
-  .main div {
+  .main > div {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
 
-  .main img {
-    width: 300px;
+  .main > div > p {
+    font-size: 2rem;
+  }
+
+  .main > div > img {
+    width: 150px;
   }
 
   .footer {
