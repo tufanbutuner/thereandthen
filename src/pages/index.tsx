@@ -1,8 +1,11 @@
 import styles from "@/styles/Home.module.css";
-import { Inter } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import Head from "next/head";
+import Image from "next/image";
+import Logo from "../assets/logo.svg";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["100", "300", "500"] });
+const dmsans = DM_Sans({ subsets: ["latin"], weight: ["700"] });
 
 export default function Home() {
   return (
@@ -16,10 +19,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main} ${dmsans.className}`}>
         <div>
-          <p>THERE AND THEN</p>
-          <p>BY TUFAN</p>
+          <Image src={Logo} alt="Logo" width={500} />
+        </div>
+        <div className={`${styles.footer}`}>
+          <div>
+            <span>tel: </span>
+            <p>coming soon</p>
+          </div>
+          <div>
+            <span>e: </span>
+            <p>tufanbutuner@gmail.com</p>
+          </div>
+          <div>
+            <span>based: </span>
+            <p>London Town, United Kingdom</p>
+          </div>
         </div>
       </main>
     </>

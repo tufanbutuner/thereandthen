@@ -6,3 +6,41 @@
   padding: 6rem;
   min-height: 100vh;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.footer div {
+  display: flex;
+  gap: 0.5em;
+  background-color: white;
+}
+
+.footer p {
+  color: hotpink;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+
+  .main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main img {
+    width: 300px;
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
