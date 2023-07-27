@@ -33,7 +33,7 @@ export default function Home() {
           </div>
           <div>
             <span>e: </span>
-            <p>tufanbutuner@gmail.com</p>
+            <p>tufan@therenthen.co.uk</p>
           </div>
           <div>
             <span>based: </span>
