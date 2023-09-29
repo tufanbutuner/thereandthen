@@ -6,16 +6,18 @@
 
 html,
 body {
-  height: 90vh;
+  height: 100%;
   max-width: 100vw;
   background: #fbf3df;
 }
 
 .container {
+  flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1.4fr 1.2fr 1.3fr;
-  height: 90vh;
-  padding: 6rem;
+  grid-template-rows: auto 1fr auto;
+  // height: 90vh;
+  padding: 6rem 6rem 0 6rem;
   gap: 2rem;
   font-size: 1.5rem;
   //   color: {theme.colors.pastel.hotred};
@@ -66,7 +68,7 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  padding-bottom: 2rem;
 
   p {
     color: #de6935;
@@ -85,29 +87,27 @@ body {
   .container {
     display: flex;
     flex-direction: column;
+    padding: 2rem;
   }
 
   .card-container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: fit-content;
     position: relative;
+    justify-content: flex-start;
 
     img {
-      visibility: hidden;
+      display: none;
     }
   }
 
-  .card-container::before {
-    content: "";
-    background-image: url("../assets/images/confused.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    right: 100px;
-    bottom: 0;
-    left: 0;
-    opacity: 0.5;
+  .footer {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    margin-top: 0rem;
+    justify-content: center;
+    flex-direction: column;
   }
 }
