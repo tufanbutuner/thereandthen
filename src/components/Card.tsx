@@ -30,7 +30,7 @@ export default function Card({
       }}
       onClick={onClick}
     >
-      <Image src={imagePath} alt="" />
+      <Image priority={true} src={imagePath} alt="Picture of the card" />
       <p>{text}</p>
     </div>
   );

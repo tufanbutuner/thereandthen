@@ -4,7 +4,7 @@ export default function Clients() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <p>Services</p>
+        <p>Clients</p>
         <RedirectToHome />
       </div>
     </div>

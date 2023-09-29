@@ -1,13 +1,12 @@
 import RedirectToHome from "@/components/Redirect";
 
-export default function Services() {
+export default function Impact() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <p>Services</p>
+        <p>Impact</p>
         <RedirectToHome />
       </div>
-      <div>Content goes here</div>
     </div>
   );
 }

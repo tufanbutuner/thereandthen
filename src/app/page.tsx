@@ -5,8 +5,6 @@ import { theme } from "@/utils/themes";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// Inside your Card component or click handler
-
 import clients from "../assets/images/clients.svg";
 import confused from "../assets/images/confused.svg";
 import contact from "../assets/images/contact.svg";
@@ -59,14 +57,14 @@ export default function Page() {
           backgroundColor={theme.colors.pastel.palegreen}
           textColour={theme.colors.pastel.peach}
           imagePath={clients}
-          onClick={() => handleCardClick("Clients")}
+          onClick={() => handleCardClick("clients")}
         />
         <Card
           text="FAQ"
           backgroundColor={theme.colors.pastel.orange}
           textColour={theme.colors.pastel.beige}
           imagePath={confused}
-          onClick={() => handleCardClick("FAQ")}
+          onClick={() => handleCardClick("faq")}
         />
       </div>
       <div className="section-4">
@@ -75,14 +73,14 @@ export default function Page() {
           backgroundColor={theme.colors.pastel.peach}
           textColour={theme.colors.pastel.babyblue}
           imagePath={walking}
-          onClick={() => handleCardClick("Impact")}
+          onClick={() => handleCardClick("impact")}
         />
         <Card
           text="Contact Us"
           backgroundColor={theme.colors.pastel.hotpink}
           textColour={theme.colors.pastel.peach}
           imagePath={contact}
-          onClick={() => handleCardClick("Contact Us")}
+          onClick={() => handleCardClick("contact-us")}
         />
       </div>
     </div>
