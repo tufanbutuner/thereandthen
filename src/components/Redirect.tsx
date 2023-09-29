@@ -6,7 +6,7 @@ export default function RedirectToHome() {
   const router = useRouter();
 
   const redirect = () => {
-    router.push("/");
+    router.back();
   };
 
   return (
