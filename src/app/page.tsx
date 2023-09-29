@@ -5,13 +5,13 @@ import { theme } from "@/utils/themes";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import clients from "../assets/images/clients.svg";
-import confused from "../assets/images/confused.svg";
-import contact from "../assets/images/contact.svg";
-import hello from "../assets/images/hello.svg";
-import money from "../assets/images/money.svg";
-import seated from "../assets/images/seated.svg";
-import walking from "../assets/images/walking.svg";
+import clients from "../../public/clients.svg";
+import confused from "../../public/confused.svg";
+import contact from "../../public/contact.svg";
+import hello from "../../public/hello.svg";
+import money from "../../public/money.svg";
+import seated from "../../public/seated.svg";
+import walking from "../../public/walking.svg";
 
 import Logo from "../assets/logo.svg";
 
