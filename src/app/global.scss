@@ -1,4 +1,6 @@
+$red: #ff8184;
 $hotred: #de6935;
+$beige: #fbf3df;
 
 * {
   box-sizing: border-box;
@@ -10,7 +12,7 @@ html,
 body {
   height: 100%;
   max-width: 100vw;
-  background: #fbf3df;
+  background: $beige;
 }
 
 .container {
@@ -18,7 +20,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1.4fr 1.2fr 1.3fr;
   grid-template-rows: auto 1fr auto;
-  // height: 90vh;
   padding: 6rem 6rem 0 6rem;
   gap: 2rem;
   font-size: 1.5rem;
@@ -29,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 6rem;
+  gap: 1rem;
 }
 
 .page-header {
@@ -46,7 +48,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ff8184;
+  background-color: $red;
   padding: 2rem;
   font-size: 1.5rem;
   border-radius: 12px;
@@ -89,6 +91,17 @@ body {
 
 .redirect {
   cursor: pointer;
+}
+
+.services-pill-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.services-pill {
+  padding: 1rem 2rem;
+  border: 1px solid #de6935;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {

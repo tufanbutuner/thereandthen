@@ -7,7 +7,10 @@ export default function Services() {
         <p>Services</p>
         <RedirectToHome />
       </div>
-      <div>Content goes here</div>
+      <div className="services-pill-container">
+        <span className="services-pill">Web Development</span>
+        <span className="services-pill">Digital Marketing</span>
+      </div>
     </div>
   );
 }
