@@ -66,6 +66,10 @@ a {
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
+
+  a {
+    height: -webkit-fill-available;
+  }
 }
 
 .section-2,

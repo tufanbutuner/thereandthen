@@ -19,6 +19,7 @@ export default function Page() {
             backgroundColor={theme.colors.pastel.paleblue}
             textColour={theme.colors.pastel.hotred}
             imagePath={images.money}
+            height="100%"
           />
         </Link>
       </div>
