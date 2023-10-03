@@ -117,12 +117,38 @@ a {
   opacity: 1;
 }
 
-.who-we-are-text {
+.who-we-are-text,
+.services-text {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+.services-text {
+  h3 {
+    color: $hotred;
+    font-family: var(--font-tannimbus);
+  }
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  ul {
+    margin-left: 2rem;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  ::marker {
+    color: #de6935;
+  }
 }
 
 @media (max-width: 768px) {

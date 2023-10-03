@@ -6,4 +6,7 @@ export const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
 });
 
-export const tanNimbus = TAN_NIMBUS({ src: "../assets/fonts/TAN-NIMBUS.ttf" });
+export const tanNimbus = TAN_NIMBUS({
+  src: "../assets/fonts/TAN-NIMBUS.ttf",
+  variable: "--font-tannimbus",
+});

@@ -15,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={`${tanNimbus.className} ${bricolage.variable}`}>
+      <body
+        className={`${tanNimbus.className} ${tanNimbus.variable} ${bricolage.variable}`}
+      >
         {children}
         <Footer />
       </body>
