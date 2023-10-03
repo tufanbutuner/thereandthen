@@ -160,4 +160,10 @@ a {
   .who-we-are-container {
     flex-direction: column-reverse;
   }
+
+  .page-header {
+    p {
+      font-size: 1.5rem;
+    }
+  }
 }

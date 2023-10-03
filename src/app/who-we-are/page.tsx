@@ -3,6 +3,7 @@
 import RedirectToHome from "@/components/Redirect";
 import { theme } from "@/utils/themes";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import hello from "../../../public/hello.svg";
 
@@ -35,8 +36,14 @@ export default function WhoWeAre() {
             needs you can kick back and relax knowing we’ve got you covered.
           </p>
           <p>
-            Interested in what we can do for you? Have a look at the services we
-            can provide for you and get in touch.
+            Interested in what we can do for you? Have a look at the{" "}
+            <Link
+              href={"/services"}
+              style={{ color: theme.colors.pastel.hotred }}
+            >
+              services
+            </Link>{" "}
+            we can provide for you and get in touch.
           </p>
         </div>
         <Image priority={true} src={hello} alt="Hello picture" width={400} />
