@@ -1,17 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function RedirectToHome() {
-  const router = useRouter();
-
-  const redirect = () => {
-    router.back();
-  };
-
   return (
-    <div className="redirect" onClick={redirect}>
-      go back
-    </div>
+    <Link href={"/"}>
+      <div className="redirect">home</div>
+    </Link>
   );
 }
