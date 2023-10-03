@@ -25,7 +25,7 @@ export default function WhoWeAre() {
           </p>
           <p>
             Interested in what we can do for you? Have a look at the services we
-            can provide for you and get in touch
+            can provide for you and get in touch.
           </p>
         </div>
         <Image priority={true} src={hello} alt="Hello picture" width={400} />

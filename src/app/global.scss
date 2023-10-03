@@ -15,6 +15,10 @@ body {
   background: $beige;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   flex-grow: 1;
   display: grid;
@@ -135,5 +139,9 @@ body {
     margin-top: 0rem;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .who-we-are-container {
+    flex-direction: column-reverse;
   }
 }
