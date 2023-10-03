@@ -1,17 +1,28 @@
+"use client";
+
 import RedirectToHome from "@/components/Redirect";
 import { theme } from "@/utils/themes";
 import Image from "next/image";
+import { useEffect } from "react";
 import hello from "../../../public/hello.svg";
 
 export default function WhoWeAre() {
+  useEffect(() => {
+    const fadeInElements = document.querySelectorAll(".fade-in");
+
+    fadeInElements.forEach((element) => {
+      element.classList.add("active");
+    });
+  }, []);
+
   return (
     <div className="page-container">
       <div className="page-header">
         <p style={{ color: theme.colors.pastel.red }}>Who we are</p>
         <RedirectToHome />
       </div>
-      <div className="who-we-are-container">
-        <div className="who-we-are-text">
+      <div className="who-we-are-container fade-in">
+        <div className="who-we-are-text fade-in">
           <p>Who says size matters? Good things can come in small packages.</p>
           <p>
             We’re a small London based start up focusing on providing web and
