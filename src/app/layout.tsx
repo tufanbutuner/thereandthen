@@ -1,8 +1,7 @@
 import Footer from "@/components/Footer";
 import "./global.scss";
 
-import TAN_NIMBUS from "next/font/local";
-const myFont = TAN_NIMBUS({ src: "../assets/fonts/TAN-NIMBUS.ttf" });
+import { bricolage, tanNimbus } from "@/utils/fonts";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={`${myFont.className}`}>
+      <body className={`${tanNimbus.className} ${bricolage.variable}`}>
         {children}
         <Footer />
       </body>

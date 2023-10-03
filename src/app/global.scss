@@ -93,15 +93,16 @@ body {
   cursor: pointer;
 }
 
-.services-pill-container {
+.who-we-are-container {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  font-family: var(--font-bricolage);
 }
 
-.services-pill {
-  padding: 1rem 2rem;
-  border: 1px solid #de6935;
-  border-radius: 8px;
+.who-we-are-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 @media (max-width: 768px) {

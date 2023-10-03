@@ -5,15 +5,7 @@ import { theme } from "@/utils/themes";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import clients from "../../public/clients.svg";
-import confused from "../../public/confused.svg";
-import contact from "../../public/contact.svg";
-import hello from "../../public/hello.svg";
-import money from "../../public/money.svg";
-import seated from "../../public/seated.svg";
-import walking from "../../public/walking.svg";
-
-import Logo from "../assets/logo.svg";
+import images from "../utils/images";
 
 export default function Page() {
   const router = useRouter();
@@ -25,13 +17,13 @@ export default function Page() {
   return (
     <div className="container main">
       <div className="section-1">
-        <Image src={Logo} alt="Logo" width={200} />
+        <Image src={images.logo} alt="Logo" width={200} />
         <p>Web and marketing solutions for small businesses.</p>
         <Card
           text="Services"
           backgroundColor={theme.colors.pastel.paleblue}
           textColour={theme.colors.pastel.hotred}
-          imagePath={money}
+          imagePath={images.money}
           onClick={() => handleCardClick("services")}
         />
       </div>
@@ -40,14 +32,14 @@ export default function Page() {
           text="Who we are"
           backgroundColor={theme.colors.pastel.babyblue}
           textColour={theme.colors.pastel.red}
-          imagePath={hello}
+          imagePath={images.hello}
           onClick={() => handleCardClick("who-we-are")}
         />
         <Card
           text="Testimonials"
           backgroundColor={theme.colors.pastel.lightorange}
           textColour={theme.colors.pastel.beige}
-          imagePath={seated}
+          imagePath={images.seated}
           onClick={() => handleCardClick("testimonials")}
         />
       </div>
@@ -56,14 +48,14 @@ export default function Page() {
           text="Clients"
           backgroundColor={theme.colors.pastel.palegreen}
           textColour={theme.colors.pastel.peach}
-          imagePath={clients}
+          imagePath={images.clients}
           onClick={() => handleCardClick("clients")}
         />
         <Card
           text="FAQ"
           backgroundColor={theme.colors.pastel.orange}
           textColour={theme.colors.pastel.beige}
-          imagePath={confused}
+          imagePath={images.confused}
           onClick={() => handleCardClick("faq")}
         />
       </div>
@@ -72,14 +64,14 @@ export default function Page() {
           text="Impact"
           backgroundColor={theme.colors.pastel.peach}
           textColour={theme.colors.pastel.babyblue}
-          imagePath={walking}
+          imagePath={images.walking}
           onClick={() => handleCardClick("impact")}
         />
         <Card
           text="Contact Us"
           backgroundColor={theme.colors.pastel.hotpink}
           textColour={theme.colors.pastel.peach}
-          imagePath={contact}
+          imagePath={images.contact}
           onClick={() => handleCardClick("contact-us")}
         />
       </div>
