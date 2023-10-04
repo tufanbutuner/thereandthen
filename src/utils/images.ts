@@ -5,6 +5,7 @@ import hello from "../../public/hello.svg";
 import money from "../../public/money.svg";
 import seated from "../../public/seated.svg";
 import walking from "../../public/walking.svg";
+import wavyline from "../../public/wavy-line.svg";
 import logo from "../assets/logo.svg";
 
 export default {
@@ -16,4 +17,5 @@ export default {
   seated,
   walking,
   logo,
+  wavyline,
 };

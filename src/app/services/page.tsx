@@ -37,11 +37,12 @@ export default function Services() {
               experiences unique to each client and their needs:
             </p>
             <ul>
-              <li>E-commerce</li>
-              <li>Booking system</li>
-              <li>Blog</li>
-              <li>Portfolio</li>
-              <li>And much more...</li>
+              <li>Hosting and Domain Setup</li>
+              <li>Front End and Back End Development</li>
+              <li>WordPress & Shopify</li>
+              <li>Custom CMS Integration</li>
+              <li>E-Commerce Websites</li>
+              <li>Blog / Portfolio / Single Page Websites</li>
             </ul>
           </div>
         </div>
@@ -51,6 +52,9 @@ export default function Services() {
           alt="Clients picture"
           width={400}
         />
+      </div>
+      <div className="divider fade-in">
+        <Image src={images.wavyline} alt="" />
       </div>
       <div className="who-we-are-container fade-in">
         <Image
