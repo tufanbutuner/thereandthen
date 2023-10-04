@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import "./global.scss";
 
 import { bricolage, tanNimbus } from "@/utils/fonts";
+import { Analytics } from "@vercel/analytics/react";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: LayoutProps) {
       >
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
