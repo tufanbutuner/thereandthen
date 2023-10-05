@@ -9,16 +9,14 @@ import images from "../utils/images";
 export default function Page() {
   return (
     <div className="container main">
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
-      />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-W2099BHSNL" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+          gtag('config', 'G-W2099BHSNL');
         `}
       </Script>
 
