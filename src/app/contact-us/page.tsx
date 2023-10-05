@@ -22,7 +22,7 @@ export default function Contact() {
       </div>
       <div className="contact-container">
         <div className="contact-text">
-          <h3>Here's where you can find us</h3>
+          <h3>Here&apos;s where you can find us</h3>
           {socials.map((social, index) => (
             <div className="contact-icons-container" key={index}>
               {social.icon}

@@ -8,7 +8,7 @@ import walking from "../../public/walking.svg";
 import wavyline from "../../public/wavy-line.svg";
 import logo from "../assets/logo.svg";
 
-export default {
+const images = {
   clients,
   confused,
   contact,
@@ -19,3 +19,5 @@ export default {
   logo,
   wavyline,
 };
+
+export default images;
