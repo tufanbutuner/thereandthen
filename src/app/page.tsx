@@ -48,24 +48,6 @@ export default function Page() {
             imagePath={images.clients}
           />
         </Link>
-        <Link href={"faq"}>
-          <Card
-            text="FAQ"
-            backgroundColor={theme.colors.pastel.orange}
-            textColour={theme.colors.pastel.beige}
-            imagePath={images.confused}
-          />
-        </Link>
-      </div>
-      <div className="section-4">
-        <Link href={"impact"}>
-          <Card
-            text="Impact"
-            backgroundColor={theme.colors.pastel.peach}
-            textColour={theme.colors.pastel.babyblue}
-            imagePath={images.walking}
-          />
-        </Link>
         <Link href={"contact-us"}>
           <Card
             text="Contact Us"

@@ -22,7 +22,7 @@ a {
 .container {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1.4fr 1.2fr 1.3fr;
+  grid-template-columns: 1fr 1.2fr 1.2fr;
   grid-template-rows: auto 1fr auto;
   padding: 6rem 6rem 0 6rem;
   gap: 2rem;
@@ -43,6 +43,7 @@ a {
   align-items: center;
 
   p {
+    color: #de6935;
     font-size: 2.5rem;
   }
 }
@@ -162,12 +163,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-bricolage);
   margin: 4rem 0 4rem 0;
 }
 
 .contact-text {
   gap: 1rem;
+
+  h3 {
+    color: #de6935;
+    margin-bottom: 2rem;
+  }
 }
 
 .contact-icons-container {
@@ -175,6 +180,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  color: #de6935;
 }
 
 @media (max-width: 768px) {
@@ -197,6 +203,12 @@ a {
 
     img {
       display: none;
+    }
+  }
+
+  .section-1 {
+    a {
+      height: auto;
     }
   }
 

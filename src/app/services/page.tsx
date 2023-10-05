@@ -2,7 +2,6 @@
 
 import RedirectToHome from "@/components/Redirect";
 import images from "@/utils/images";
-import { theme } from "@/utils/themes";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -18,7 +17,7 @@ export default function Services() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <p style={{ color: theme.colors.pastel.hotred }}>Services</p>
+        <p>Services</p>
         <RedirectToHome />
       </div>
       <div className="who-we-are-container fade-in">
