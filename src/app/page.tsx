@@ -3,11 +3,25 @@ import { theme } from "@/utils/themes";
 import Image from "next/image";
 
 import Link from "next/link";
+import Script from "next/script";
 import images from "../utils/images";
 
 export default function Page() {
   return (
     <div className="container main">
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+        `}
+      </Script>
+
       <div className="section-1">
         <Image src={images.logo} alt="Logo" width={200} />
         <p>Web and marketing solutions for small businesses.</p>
