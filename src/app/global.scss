@@ -118,7 +118,8 @@ a {
 }
 
 .who-we-are-text,
-.services-text {
+.services-text,
+.contact-text {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -155,6 +156,25 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-bricolage);
+  margin: 4rem 0 4rem 0;
+}
+
+.contact-text {
+  gap: 1rem;
+}
+
+.contact-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
