@@ -22,7 +22,7 @@ export default function Page() {
 
       <div className="section-1">
         <Image src={images.logo} alt="Logo" width={200} />
-        <p>Web and marketing solutions for small businesses</p>
+        <p>Web and marketing solutions for small businesses.</p>
         <Link href="services">
           <Card
             text="Services"
