@@ -166,6 +166,23 @@ a {
   margin: 4rem 0 4rem 0;
 }
 
+.clients-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0 4rem 0;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    color: $hotred;
+  }
+
+  p {
+    color: $hotred;
+  }
+}
+
 .contact-text {
   gap: 1rem;
 
