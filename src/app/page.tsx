@@ -55,7 +55,7 @@ export default function Page() {
         <Link href={"clients"}>
           <Card
             text="Clients"
-            backgroundColor={theme.colors.pastel.palegreen}
+            backgroundColor={theme.colors.pastel.red}
             textColour={theme.colors.pastel.peach}
             imagePath={images.clients}
           />
