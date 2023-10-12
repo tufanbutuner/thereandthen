@@ -70,6 +70,42 @@ export default function Services() {
         <div className="who-we-are-container fade-in">
           <Image
             priority={true}
+            src={images.clients}
+            alt="Clients picture"
+            width={400}
+          />
+          <div className="services-text fade-in">
+            <h3>Our tech stack</h3>
+            <p>
+              We’ve got you covered on all your website needs, from a website
+              revamp to maintenance, to building a website from the ground up,
+              we’re excited to show you our creativity and what we can do for
+              your business.
+            </p>
+            <div className="services-list fade-in">
+              <p>
+                We aren’t just about creating generic websites but we create
+                experiences unique to each client and their needs:
+              </p>
+              <ul>
+                <li>
+                  Languages and Frameworks: React, Next.js, TypeScript,
+                  JavaScript
+                </li>
+                <li>Commerce Platforms: Shopify, Wordpress</li>
+                <li>Headless CMS: Sanity, Contentful </li>
+                <li>Deployment: Vercel</li>
+                <li>Design: Figma, Photoshop, Illustrator</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="divider fade-in">
+          <Image src={images.wavyline} alt="" />
+        </div>
+        <div className="who-we-are-container fade-in">
+          <Image
+            priority={true}
             src={images.money}
             alt="Clients picture"
             width={400}

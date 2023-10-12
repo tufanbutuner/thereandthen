@@ -36,6 +36,7 @@ export default function Clients() {
           <p>Clients</p>
           <RedirectToHome />
         </div>
+
         <div className="clients-container">
           <h1>Meet our clients</h1>
           {clientList.map((client, index) => (
