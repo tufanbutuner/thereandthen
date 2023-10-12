@@ -70,7 +70,7 @@ export default function Services() {
         <div className="who-we-are-container fade-in">
           <Image
             priority={true}
-            src={images.clients}
+            src={images.seated}
             alt="Clients picture"
             width={400}
           />
@@ -104,12 +104,6 @@ export default function Services() {
           <Image src={images.wavyline} alt="" />
         </div>
         <div className="who-we-are-container fade-in">
-          <Image
-            priority={true}
-            src={images.money}
-            alt="Clients picture"
-            width={400}
-          />
           <div className="services-text fade-in">
             <h3>Crush the search results</h3>
             <p>
@@ -121,6 +115,12 @@ export default function Services() {
               to.
             </p>
           </div>
+          <Image
+            priority={true}
+            src={images.money}
+            alt="Clients picture"
+            width={400}
+          />
         </div>
       </div>
     </>
