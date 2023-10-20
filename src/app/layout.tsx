@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import "./global.scss";
 
 import { bricolage, tanNimbus } from "@/utils/fonts";
@@ -19,8 +19,9 @@ export default function RootLayout({ children }: LayoutProps) {
       <body
         className={`${tanNimbus.className} ${tanNimbus.variable} ${bricolage.variable}`}
       >
+        <Navbar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
         <Analytics />
       </body>
     </html>

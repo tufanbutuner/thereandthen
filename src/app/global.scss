@@ -24,7 +24,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1.2fr;
   grid-template-rows: auto 1fr auto;
-  padding: 6rem 6rem 0 6rem;
+  padding: 0rem 4rem 0 4rem;
   gap: 2rem;
   font-size: 1.5rem;
   color: $hotred;
@@ -33,7 +33,7 @@ a {
 .page-container {
   display: flex;
   flex-direction: column;
-  padding: 6rem;
+  padding: 2rem 6rem;
   gap: 1rem;
 }
 
@@ -198,6 +198,17 @@ a {
   align-items: center;
   gap: 1rem;
   color: #de6935;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+
+  p {
+    color: $hotred;
+  }
 }
 
 @media (max-width: 768px) {

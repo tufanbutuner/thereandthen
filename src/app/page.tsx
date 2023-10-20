@@ -1,6 +1,5 @@
 import Card from "@/components/Card";
 import { theme } from "@/utils/themes";
-import Image from "next/image";
 
 import Link from "next/link";
 import Script from "next/script";
@@ -21,8 +20,6 @@ export default function Page() {
       </Script>
 
       <div className="section-1">
-        <Image src={images.logo} alt="Logo" width={200} />
-        <p>Web and marketing solutions for small businesses.</p>
         <Link href="services">
           <Card
             text="Services"
