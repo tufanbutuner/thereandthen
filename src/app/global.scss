@@ -22,8 +22,7 @@ a {
 .container {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1.2fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 0.9fr 1fr 1fr;
   padding: 0rem 4rem 0 4rem;
   gap: 2rem;
   font-size: 1.5rem;
@@ -212,10 +211,20 @@ a {
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+
+    p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 0rem 2rem 2rem 2rem;
   }
 
   .page-container {
