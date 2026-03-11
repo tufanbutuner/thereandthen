@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MouseEventHandler } from "react";
 
 interface ICard {
@@ -6,7 +5,6 @@ interface ICard {
   height?: string;
   textColour?: string;
   backgroundColor?: string;
-  imagePath: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
@@ -14,7 +12,6 @@ export default function Card({
   text,
   height,
   textColour,
-  imagePath,
   backgroundColor,
   onClick,
 }: ICard) {
@@ -25,12 +22,10 @@ export default function Card({
         backgroundColor: backgroundColor,
         height: height,
         color: textColour,
-        backgroundImage: imagePath,
         overflow: "hidden",
       }}
       onClick={onClick}
     >
-      <Image priority={true} src={imagePath} alt="Picture of the card" />
       <p>{text}</p>
     </div>
   );
