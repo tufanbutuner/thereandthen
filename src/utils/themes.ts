@@ -1,35 +1,12 @@
-export interface Theme {
-  colors: {
-    pastel: {
-      red: string;
-      hotred: string;
-      paleblue: string;
-      babyblue: string;
-      beige: string;
-      peach: string;
-      yellow: string;
-      palegreen: string;
-      orange: string;
-      hotpink: string;
-      lightorange: string;
-    };
-  };
-}
-
-export const theme: Theme = {
-  colors: {
-    pastel: {
-      red: "#ff8184",
-      hotred: "#DE6935",
-      paleblue: "#D9E7F5",
-      babyblue: "#D2CAFC",
-      beige: "#FBF3DF",
-      peach: "#E5ECB0",
-      yellow: "#FFF1AC",
-      palegreen: "#C0CBB7",
-      orange: "#F1A88B",
-      hotpink: "#BB9EC4",
-      lightorange: "#F5C06A",
-    },
-  },
+export const W = {
+  cream: "#F4ECD8",
+  paper: "#FBF6E6",
+  ink: "#1a1a1a",
+  orange: "#E85D2F",
+  lilac: "#CDB8F2",
+  blue: "#D9E5F2",
+  peach: "#F8B487",
+  pink: "#F4C2D7",
+  green: "#A5D9A5",
+  yellow: "#FFE898",
 };

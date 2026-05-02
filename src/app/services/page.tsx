@@ -1,128 +1,54 @@
-"use client";
+import Link from "next/link";
+import { W } from "@/utils/themes";
 
-import RedirectToHome from "@/components/Redirect";
-import images from "@/utils/images";
-import Image from "next/image";
-import Script from "next/script";
-import { useEffect } from "react";
+const tools = [
+  { tag: "TOOL · 01", name: "Web dev", color: W.peach, icon: "🔧", body: "WordPress · Shopify · custom builds. We pick the right hammer for the right nail.", price: "from £1,200", rot: -0.6 },
+  { tag: "TOOL · 02", name: "Brand & identity", color: W.lilac, icon: "✏︎", body: "Marks, type systems, colour. Just enough to look like a real business.", price: "from £900", rot: 0.6 },
+  { tag: "TOOL · 03", name: "Marketing & SEO", color: W.green, icon: "📣", body: "Plain-English SEO and email people read. Steady drip, not spam.", price: "from £600/mo", rot: -0.6 },
+  { tag: "TOOL · 04", name: "Maintenance", color: W.blue, icon: "🛠", body: "Updates, backups, tweaks. A real human to email when something breaks.", price: "from £150/mo", rot: 0.6 },
+];
 
-export default function Services() {
-  useEffect(() => {
-    const fadeInElements = document.querySelectorAll(".fade-in");
-
-    fadeInElements.forEach((element) => {
-      element.classList.add("active");
-    });
-  }, []);
-
+export default function ServicesPage() {
   return (
-    <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-W2099BHSNL" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-W2099BHSNL');
-        `}
-      </Script>
-
-      <div className="page-container">
-        <div className="page-header">
-          <p>Services</p>
-          <RedirectToHome />
-        </div>
-        <div className="who-we-are-container fade-in">
-          <div className="services-text fade-in">
-            <h3>Web development that wows</h3>
-            <p>
-              We’ve got you covered on all your website needs, from a website
-              revamp to maintenance, to building a website from the ground up,
-              we’re excited to show you our creativity and what we can do for
-              your business.
-            </p>
-            <div className="services-list fade-in">
-              <p>
-                We aren’t just about creating generic websites but we create
-                experiences unique to each client and their needs:
-              </p>
-              <ul>
-                <li>Hosting and Domain Setup</li>
-                <li>Front End and Back End Development</li>
-                <li>WordPress & Shopify</li>
-                <li>Custom CMS Integration</li>
-                <li>E-Commerce Websites</li>
-                <li>Blog / Portfolio / Single Page Websites</li>
-              </ul>
-            </div>
-          </div>
-          <Image
-            priority={true}
-            src={images.clients}
-            alt="Clients picture"
-            width={400}
-          />
-        </div>
-        <div className="divider fade-in">
-          <Image src={images.wavyline} alt="" />
-        </div>
-        <div className="who-we-are-container fade-in">
-          <Image
-            priority={true}
-            src={images.seated}
-            alt="Clients picture"
-            width={400}
-          />
-          <div className="services-text fade-in">
-            <h3>Our tech stack</h3>
-            <p>
-              We’ve got you covered on all your website needs, from a website
-              revamp to maintenance, to building a website from the ground up,
-              we’re excited to show you our creativity and what we can do for
-              your business.
-            </p>
-            <div className="services-list fade-in">
-              <p>
-                We aren’t just about creating generic websites but we create
-                experiences unique to each client and their needs:
-              </p>
-              <ul>
-                <li>
-                  Languages and Frameworks: React, Next.js, TypeScript,
-                  JavaScript
-                </li>
-                <li>Commerce Platforms: Shopify, Wordpress</li>
-                <li>Headless CMS: Sanity, Contentful </li>
-                <li>Deployment: Vercel</li>
-                <li>Design: Figma, Photoshop, Illustrator</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="divider fade-in">
-          <Image src={images.wavyline} alt="" />
-        </div>
-        <div className="who-we-are-container fade-in">
-          <div className="services-text fade-in">
-            <h3>Crush the search results</h3>
-            <p>
-              Want to climb the Google ranks? Is your Google Ads account stuck
-              in the mud? We’ll help you climb the search ladder and make your
-              website shine bright in the search results. By optimising your web
-              content and tweaking your keywords, we’ll make sure to keep up
-              with the ever changing world of search and SEO so you don’t need
-              to.
-            </p>
-          </div>
-          <Image
-            priority={true}
-            src={images.money}
-            alt="Clients picture"
-            width={400}
-          />
-        </div>
+    <div className="corkboard">
+      <div className="services-header">
+        <div className="section-label">(SERVICES)</div>
+        <h1 className="page-heading">
+          What we <span className="accent">do.</span>
+        </h1>
+        <p>
+          We&apos;re a two-person studio so we don&apos;t pretend to do everything. Here&apos;s the kit we keep within arm&apos;s reach.
+        </p>
       </div>
-    </>
+
+      <div className="services-grid">
+        {tools.map((t) => (
+          <div
+            key={t.name}
+            className="service-card"
+            style={{
+              background: t.color,
+              transform: `rotate(${t.rot}deg)`,
+            }}
+          >
+            <div className="service-card__pin" />
+            <div className="service-card__header">
+              <span>{t.tag}</span>
+              <span>{t.price}</span>
+            </div>
+            <div className="service-card__icon">{t.icon}</div>
+            <div className="service-card__name">{t.name}</div>
+            <p className="service-card__body">{t.body}</p>
+            <Link href="/get-a-quote" className="service-card__cta">
+              Brief us on this →
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      <div className="services-arrow">
+        <span>↓ next: see our work</span>
+      </div>
+    </div>
   );
 }
