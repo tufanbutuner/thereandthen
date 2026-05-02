@@ -3,13 +3,13 @@ import { W } from "@/utils/themes";
 
 const studies = [
   {
-    name: "Daisy & Co. Café",
+    name: "La Planchette",
     color: W.peach,
-    emoji: "☕",
-    problem: "Old WordPress site. No online ordering. Long queues, lost regulars.",
-    did: ["Rebuild on Shopify", "Custom booking flow", "New brand mini-refresh"],
-    result: "+312% online bookings",
-    quote: '"They got us 3× more bookings." — Daisy',
+    emoji: "🍷",
+    problem: "Independent wine bar in Windsor with a loyal local crowd but no real web presence to match the warmth of the place.",
+    did: ["New website build", "Brand identity", "Online table bookings"],
+    result: "Fully booked most weekends",
+    quote: '"Allez les amis!" — La Planchette, Windsor',
     rot: -0.4,
   },
   {

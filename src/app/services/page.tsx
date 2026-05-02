@@ -17,7 +17,7 @@ export default function ServicesPage() {
           What we <span className="accent">do.</span>
         </h1>
         <p>
-          We&apos;re a two-person studio so we don&apos;t pretend to do everything. Here&apos;s the kit we keep within arm&apos;s reach.
+          We don&apos;t pretend to do everything. Here&apos;s the kit we keep within arm&apos;s reach.
         </p>
       </div>
 
@@ -46,8 +46,9 @@ export default function ServicesPage() {
         ))}
       </div>
 
-      <div className="services-arrow">
-        <span>↓ next: see our work</span>
+      <div className="services-footer">
+        <Link href="/our-work" className="btn-dark">See our work →</Link>
+        <Link href="/get-a-quote" className="btn-ghost">Get a quote</Link>
       </div>
     </div>
   );
