@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./global.scss";
 
-import { bricolage, tanNimbus } from "@/utils/fonts";
+import { inter, fraunces, dmMono, caveat } from "@/utils/fonts";
 import { Analytics } from "@vercel/analytics/react";
 
 type LayoutProps = {
@@ -17,11 +17,10 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${tanNimbus.className} ${tanNimbus.variable} ${bricolage.variable}`}
+        className={`${inter.variable} ${fraunces.variable} ${dmMono.variable} ${caveat.variable}`}
       >
         <Navbar />
         {children}
-        {/* <Footer /> */}
         <Analytics />
       </body>
     </html>

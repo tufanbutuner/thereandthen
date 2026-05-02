@@ -1,12 +1,5 @@
-import RedirectToHome from "@/components/Redirect";
+import { redirect } from "next/navigation";
 
 export default function Impact() {
-  return (
-    <div className="page-container">
-      <div className="page-header">
-        <p>Impact</p>
-        <RedirectToHome />
-      </div>
-    </div>
-  );
+  redirect("/our-work");
 }
