@@ -665,6 +665,14 @@ button {
     outline: none;
   }
 
+  &__error {
+    margin-top: 12px;
+    font-size: 13px;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    color: #c0392b;
+    opacity: 0.85;
+  }
+
   &__nav {
     display: flex;
     justify-content: space-between;

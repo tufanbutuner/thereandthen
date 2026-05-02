@@ -17,6 +17,7 @@ type FormData = Record<string, string>;
 export default function GetAQuotePage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>({ what: "", who: "", budget: "", when: "", name: "", email: "" });
+  const [error, setError] = useState(false);
 
   const current = stepsDef[step];
   const done = step >= stepsDef.length;
@@ -105,7 +106,7 @@ export default function GetAQuotePage() {
                 <button
                   key={o}
                   className={`quote-card__option${form[current.key] === o ? " quote-card__option--selected" : ""}`}
-                  onClick={() => setForm({ ...form, [current.key]: o })}
+                  onClick={() => { setForm({ ...form, [current.key]: o }); setError(false); }}
                 >
                   {o}
                 </button>
@@ -115,21 +116,32 @@ export default function GetAQuotePage() {
             <input
               autoFocus
               value={form[current.key]}
-              onChange={(e) => setForm({ ...form, [current.key]: e.target.value })}
+              onChange={(e) => { setForm({ ...form, [current.key]: e.target.value }); setError(false); }}
               placeholder={current.placeholder}
               className="quote-card__input"
             />
+          )}
+
+          {error && (
+            <div className="quote-card__error">Please fill this in before continuing.</div>
           )}
 
           <div className="quote-card__nav">
             <button
               className="quote-card__back"
               disabled={step === 0}
-              onClick={() => setStep(Math.max(0, step - 1))}
+              onClick={() => { setStep(Math.max(0, step - 1)); setError(false); }}
             >
               ← back
             </button>
-            <button className="btn-dark" onClick={() => setStep(step + 1)}>
+            <button
+              className="btn-dark"
+              onClick={() => {
+                if (!form[current.key].trim()) { setError(true); return; }
+                setError(false);
+                setStep(step + 1);
+              }}
+            >
               {step === stepsDef.length - 1 ? "Send →" : "next →"}
             </button>
           </div>
