@@ -97,23 +97,51 @@ export default function Page() {
       <div className="corkboard">
         <div className="home-hero">
           <div className="section-label">◆ WELCOME TO THE WORKSHOP</div>
-          <h1 className="page-heading">
+          <h1 className="page-heading home-hero__heading--desktop">
             Drag things around.<br />
             <span className="accent">Make a mess.</span> Hire us.
           </h1>
-          <p>
+          <h1 className="page-heading home-hero__heading--mobile">
+            Swipe through.<br />
+            <span className="accent">Get inspired.</span> Hire us.
+          </h1>
+          <p className="home-hero__desc--desktop">
             Everything below is a real thing we do. Push the notes around — like a mood board,
             except the mood is &quot;small business getting its life together.&quot;
+          </p>
+          <p className="home-hero__desc--mobile">
+            Everything below is a real thing we do. Swipe through the notes to see what we&apos;re about.
           </p>
           <div className="home-hero__buttons">
             <Link href="/services" className="btn-dark">See our services →</Link>
             <Link href="/get-a-quote" className="btn-ghost">Get a quote</Link>
-            <button className="btn-ghost" onClick={() => setNotes(defaultNotes())}>
+            <button className="btn-ghost home-hero__reset" onClick={() => setNotes(defaultNotes())}>
               Reset board ↻
             </button>
           </div>
         </div>
 
+        {/* Mobile: swipeable carousel */}
+        <div className="home-carousel">
+          {defaultNotes().map((n) => (
+            <div
+              key={n.id}
+              className="home-carousel__note"
+              style={{
+                background: n.color,
+                color: n.textColor || W.ink,
+                transform: `rotate(${n.rot}deg)`,
+              }}
+            >
+              <div className="note__pin" />
+              <div className="note__tag">{n.tag}</div>
+              <div className="note__title" style={{ fontSize: n.tag === "CTA" ? 26 : 20 }}>{n.title}</div>
+              <div className="note__body">{n.body}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: draggable corkboard */}
         <div
           ref={ref}
           className="home-board"

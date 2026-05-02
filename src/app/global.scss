@@ -259,6 +259,43 @@ button {
   }
 }
 
+// ── Mobile note carousel ─────────────────────────────
+.home-carousel {
+  display: none; // hidden on desktop, shown on mobile below
+
+  gap: 16px;
+  overflow-x: auto;
+  padding: 24px 20px 48px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__note {
+    flex: 0 0 80vw;
+    max-width: 300px;
+    scroll-snap-align: center;
+    padding: 20px 20px 24px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.22);
+  }
+}
+
+// show/hide hero copy variants
+.home-hero__heading--mobile,
+.home-hero__desc--mobile {
+  display: none;
+}
+
+.home-hero__heading--desktop,
+.home-hero__desc--desktop {
+  display: block;
+}
+
 // ── Services page ────────────────────────────────────
 .services-header {
   padding: 40px 56px 0;
@@ -326,11 +363,12 @@ button {
     font-size: 14px;
     line-height: 1.5;
     margin-top: 10px;
+    margin-bottom: 20px;
     color: rgba($ink, 0.87);
   }
 
   &__cta {
-    margin-top: 12px;
+    margin-top: 0;
     background: $ink;
     color: $cream;
     border: 0;
@@ -792,11 +830,30 @@ button {
     h1 {
       font-size: 48px;
     }
+
+    &__reset {
+      display: none;
+    }
   }
 
+  // swap board for carousel on mobile
   .home-board {
-    margin: 0 20px 40px;
-    height: 500px;
+    display: none;
+  }
+
+  .home-carousel {
+    display: flex;
+  }
+
+  // swap hero copy variants
+  .home-hero__heading--desktop,
+  .home-hero__desc--desktop {
+    display: none;
+  }
+
+  .home-hero__heading--mobile,
+  .home-hero__desc--mobile {
+    display: block;
   }
 
   .services-header,
