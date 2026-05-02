@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./global.scss";
 
-import { inter, fraunces, dmMono, caveat } from "@/utils/fonts";
+import { caveat, dmMono, fraunces, inter } from "@/utils/fonts";
 import { Analytics } from "@vercel/analytics/react";
 
 type LayoutProps = {

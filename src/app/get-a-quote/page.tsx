@@ -18,9 +18,34 @@ export default function GetAQuotePage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>({ what: "", who: "", budget: "", when: "", name: "", email: "" });
   const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const current = stepsDef[step];
   const done = step >= stepsDef.length;
+
+  const handleNext = async () => {
+    if (!form[current.key].trim()) { setError(true); return; }
+    setError(false);
+    if (step === stepsDef.length - 1) {
+      setSending(true);
+      setSendError(false);
+      try {
+        const res = await fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+        if (!res.ok) throw new Error();
+      } catch {
+        setSending(false);
+        setSendError(true);
+        return;
+      }
+      setSending(false);
+    }
+    setStep(step + 1);
+  };
 
   if (done) {
     return (
@@ -40,8 +65,8 @@ export default function GetAQuotePage() {
                 key={s.key}
                 className="quote-done__receipt"
                 style={{
-                  left: `${10 + (i % 3) * 30}%`,
-                  top: `${(i % 2) * 14 + Math.floor(i / 2) * 60}px`,
+                  left: `${4 + (i % 3) * 32}%`,
+                  top: `${Math.floor(i / 3) * 180 + (i % 2) * 20}px`,
                   background: s.color,
                   transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (1 + i)}deg)`,
                 }}
@@ -117,6 +142,7 @@ export default function GetAQuotePage() {
               autoFocus
               value={form[current.key]}
               onChange={(e) => { setForm({ ...form, [current.key]: e.target.value }); setError(false); }}
+              onKeyDown={(e) => { if (e.key === "Enter") handleNext(); }}
               placeholder={current.placeholder}
               className="quote-card__input"
             />
@@ -124,6 +150,10 @@ export default function GetAQuotePage() {
 
           {error && (
             <div className="quote-card__error">Please fill this in before continuing.</div>
+          )}
+
+          {sendError && (
+            <div className="quote-card__error">Something went wrong sending your brief. Check your connection and try again.</div>
           )}
 
           <div className="quote-card__nav">
@@ -134,15 +164,8 @@ export default function GetAQuotePage() {
             >
               ← back
             </button>
-            <button
-              className="btn-dark"
-              onClick={() => {
-                if (!form[current.key].trim()) { setError(true); return; }
-                setError(false);
-                setStep(step + 1);
-              }}
-            >
-              {step === stepsDef.length - 1 ? "Send →" : "next →"}
+            <button className="btn-dark" onClick={handleNext} disabled={sending}>
+              {sending ? "Sending…" : step === stepsDef.length - 1 ? "Send →" : "next →"}
             </button>
           </div>
         </div>
