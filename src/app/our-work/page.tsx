@@ -48,7 +48,7 @@ export default function OurWorkPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="study-card"
-            style={{ transform: `rotate(${s.rot}deg)` }}
+            style={{ "--rot": `${s.rot}deg` } as React.CSSProperties}
           >
             <div className="study-card__left" style={{ background: s.color }}>
               <div className="study-card__fig">FIG. {i + 1}</div>

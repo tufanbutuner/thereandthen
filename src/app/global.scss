@@ -441,6 +441,13 @@ button {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: rotate(var(--rot, 0deg)) scale(1.03);
+    box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.35);
+  }
 
   &__left {
     padding: 28px;
