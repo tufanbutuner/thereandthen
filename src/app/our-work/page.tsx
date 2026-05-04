@@ -4,6 +4,7 @@ import { W } from "@/utils/themes";
 const studies = [
   {
     name: "La Planchette",
+    url: "https://laplanchette.uk",
     color: W.peach,
     emoji: "🍷",
     problem: "Independent wine bar in Windsor with a loyal local crowd but no real web presence to match the warmth of the place.",
@@ -13,24 +14,15 @@ const studies = [
     rot: -0.4,
   },
   {
-    name: "Pebble Pets",
-    color: W.lilac,
-    emoji: "🐾",
-    problem: "High-street shop. Zero online presence. Stock spread across spreadsheets.",
-    did: ["Custom Shopify theme", "Subscription pet-food", "Photography weekend"],
-    result: "£0 → £40k/mo",
-    quote: '"My golden retriever has fans now." — Sam',
-    rot: 0.4,
-  },
-  {
-    name: "Hatch Studio",
+    name: "Candy Crown",
+    url: "https://thecandycrown.com",
     color: W.pink,
-    emoji: "✱",
-    problem: "Indie tools brand launching. Needed a marketing site that didn't look like every other SaaS.",
-    did: ["Editorial-style design", "Headless CMS", "Loud launch campaign"],
-    result: "1.4M views Y1",
-    quote: '"Worth twice what we paid." — Mo',
-    rot: -0.4,
+    emoji: "🍬",
+    problem: "Sweet treats brand needed a cohesive identity and an organised online shop that matched the fun of the product.",
+    did: ["Brand identity & artwork", "Shopify website build", "Category catalogue & site structure"],
+    result: "thecandycrown.com",
+    quote: '"Looks good enough to eat." — Candy Crown',
+    rot: 0.4,
   },
 ];
 
@@ -50,8 +42,11 @@ export default function OurWorkPage() {
 
       <div className="work-studies">
         {studies.map((s, i) => (
-          <div
+          <Link
             key={s.name}
+            href={s.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="study-card"
             style={{ transform: `rotate(${s.rot}deg)` }}
           >
@@ -75,7 +70,7 @@ export default function OurWorkPage() {
               <div className="study-card__quote">{s.quote}</div>
             </div>
             <div className="study-card__tape" />
-          </div>
+          </Link>
         ))}
       </div>
 

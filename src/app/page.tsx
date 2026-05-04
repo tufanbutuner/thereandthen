@@ -51,8 +51,8 @@ function defaultNotes(): NoteData[] {
       w: 270,
       rot: -2,
       color: W.peach,
-      title: '"WORTH 2× WHAT WE PAID."',
-      body: "— Mo, Hatch Studio",
+      title: '"LOOKS GOOD ENOUGH TO EAT."',
+      body: "— Candy Crown",
       tag: "QUOTE",
     },
     {

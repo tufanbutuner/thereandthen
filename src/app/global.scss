@@ -438,6 +438,9 @@ button {
   box-shadow: 0 14px 28px -16px rgba(0, 0, 0, 0.25);
   position: relative;
   border: 1px solid rgba($ink, 0.06);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 
   &__left {
     padding: 28px;
