@@ -745,6 +745,8 @@ button {
     font-size: 22px;
     margin-top: 4px;
     font-family: var(--font-caveat), cursive;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -948,5 +950,24 @@ button {
 
   .quote-done h1 {
     font-size: 48px;
+  }
+
+  .quote-done__receipts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .quote-done__receipt {
+    position: static;
+    width: 100%;
+    max-width: 360px;
+    transform: none !important;
+
+    &:nth-child(odd)  { transform: rotate(-1deg) !important; }
+    &:nth-child(even) { transform: rotate(1deg) !important; }
   }
 }
