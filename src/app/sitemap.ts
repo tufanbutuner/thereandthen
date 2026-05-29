@@ -1,54 +1,15 @@
-import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+import type { MetadataRoute } from "next";
+
+const routes = ["/", "/services", "/our-work", "/about", "/get-a-quote"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://therenthen.co.uk/",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: "https://therenthen.co.uk/services",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/clients",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/contact-us",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/faq",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/impact",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/testimonials",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://therenthen.co.uk/who-we-are",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  const lastModified = new Date();
+
+  return routes.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency: path === "/" ? "monthly" : "monthly",
+    priority: path === "/" ? 1 : 0.8,
+  }));
 }

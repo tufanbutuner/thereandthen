@@ -1,0 +1,10 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Next.js 16 App Router, React 18, TypeScript, Sass.
+  Domain: https://therenthen.co.uk
+  Contact: hello@therenthen.co.uk
+  Analytics: Vercel Analytics only (no Google Analytics).
+  Quote API: POST /api/quote via Resend; requires RESEND_API_KEY.
+  Visual system: corkboard / sticky-note UI; shared tokens in src/utils/themes.ts.
+  Legacy routes redirect to canonical pages (e.g. /contact-us → /get-a-quote).

@@ -1,4 +1,11 @@
 import { W } from "@/utils/themes";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Small team, big standards — web and marketing from Hackney for businesses that want sites that actually work.",
+};
 
 export default function AboutPage() {
   return (
@@ -18,7 +25,9 @@ export default function AboutPage() {
           style={{ background: W.peach, transform: "rotate(-1deg)" }}
         >
           <div className="about-card__pin" />
-          <div className="about-card__photo">[ photo: Tufan ]</div>
+          <div className="about-card__photo" aria-hidden="true">
+            <span className="about-card__initials">T</span>
+          </div>
           <div className="about-card__name">Tufan</div>
           <div className="about-card__role">BUILDS THE THINGS</div>
           <p className="about-card__bio">

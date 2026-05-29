@@ -26,6 +26,28 @@ button {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
+:focus-visible {
+  outline: 2px solid $orange;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 16px;
+  background: $ink;
+  color: $cream;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:focus {
+    left: 16px;
+    top: 16px;
+  }
+}
+
 // ── Navbar ───────────────────────────────────────────
 .navbar {
   display: flex;
@@ -37,6 +59,7 @@ button {
   top: 0;
   background: $cream;
   z-index: 50;
+  gap: 12px;
 
   &__wordmark {
     display: flex;
@@ -71,6 +94,18 @@ button {
     letter-spacing: -0.01em;
     font-weight: 700;
     text-transform: lowercase;
+  }
+
+  &__toggle {
+    display: none;
+    background: transparent;
+    color: $ink;
+    border: 1px solid rgba($ink, 0.19);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   &__links {
@@ -110,6 +145,25 @@ button {
   }
 }
 
+// ── Footer ───────────────────────────────────────────
+.footer {
+  border-top: 1px dashed rgba($ink, 0.15);
+  padding: 24px 32px 32px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba($ink, 0.75);
+  line-height: 1.6;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
 // ── Corkboard (shared page wrapper) ──────────────────
 .corkboard {
   min-height: calc(100vh - 64px);
@@ -120,6 +174,18 @@ button {
     transparent 0
   );
   background-size: 16px 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 // ── Section label (DM Mono tag) ──────────────────────
@@ -442,7 +508,9 @@ button {
   text-decoration: none;
   color: inherit;
   transform: rotate(var(--rot, 0deg));
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: rotate(var(--rot, 0deg)) scale(1.03);
@@ -662,8 +730,12 @@ button {
     }
   }
 
-  &__input {
+  &__field {
+    display: block;
     margin-top: 22px;
+  }
+
+  &__input {
     width: 100%;
     background: transparent;
     border: 0;
@@ -793,16 +865,23 @@ button {
   }
 
   &__photo {
-    background: $ink;
+    background: linear-gradient(145deg, $ink 0%, lighten($ink, 12%) 100%);
     height: 200px;
     border-radius: 4px;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-dm-mono), monospace;
-    font-size: 11px;
-    color: rgba($cream, 0.5);
+    border: 2px dashed rgba($cream, 0.2);
+  }
+
+  &__initials {
+    font-family: var(--font-fraunces), serif;
+    font-size: 72px;
+    font-style: italic;
+    color: $cream;
+    line-height: 1;
+    transform: rotate(-3deg);
   }
 
   &__name {
@@ -844,20 +923,36 @@ button {
 // ── Responsive ───────────────────────────────────────
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 12px;
+    flex-wrap: wrap;
     padding: 12px 16px;
 
+    &__toggle {
+      display: inline-flex;
+      margin-left: auto;
+    }
+
     &__links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 4px;
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+      padding-top: 8px;
+
+      &--open {
+        display: flex;
+      }
     }
 
     &__link {
-      padding: 6px 10px;
-      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      padding: 10px 14px;
+      font-size: 14px;
     }
+  }
+
+  .footer {
+    padding: 20px 16px 28px;
   }
 
   .home-hero {
@@ -977,7 +1072,11 @@ button {
     max-width: 360px;
     transform: none !important;
 
-    &:nth-child(odd)  { transform: rotate(-1deg) !important; }
-    &:nth-child(even) { transform: rotate(1deg) !important; }
+    &:nth-child(odd) {
+      transform: rotate(-1deg) !important;
+    }
+    &:nth-child(even) {
+      transform: rotate(1deg) !important;
+    }
   }
 }

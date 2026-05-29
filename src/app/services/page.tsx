@@ -1,11 +1,50 @@
-import Link from "next/link";
 import { W } from "@/utils/themes";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Web dev, brand identity, marketing, and maintenance — the kit we keep within arm's reach for small businesses.",
+};
 
 const tools = [
-  { tag: "TOOL · 01", name: "Web dev", color: W.peach, icon: "🔧", body: "WordPress · Shopify · custom builds. We pick the right hammer for the right nail.", price: "from £1,200", rot: -0.6 },
-  { tag: "TOOL · 02", name: "Brand & identity", color: W.lilac, icon: "✏︎", body: "Marks, type systems, colour. Just enough to look like a real business.", price: "from £900", rot: 0.6 },
-  { tag: "TOOL · 03", name: "Marketing & SEO", color: W.green, icon: "📣", body: "Plain-English SEO and email people read. Steady drip, not spam.", price: "from £600/mo", rot: -0.6 },
-  { tag: "TOOL · 04", name: "Maintenance", color: W.blue, icon: "🛠", body: "Updates, backups, tweaks. A real human to email when something breaks.", price: "from £150/mo", rot: 0.6 },
+  {
+    tag: "TOOL · 01",
+    name: "Web dev",
+    color: W.peach,
+    icon: "🔧",
+    body: "WordPress · Shopify · custom builds. We pick the right hammer for the right nail.",
+    price: "from £1,200",
+    rot: -0.6,
+  },
+  {
+    tag: "TOOL · 02",
+    name: "Brand & identity",
+    color: W.lilac,
+    icon: "✏︎",
+    body: "Marks, type systems, colour. Just enough to look like a real business.",
+    price: "from £900",
+    rot: 0.6,
+  },
+  {
+    tag: "TOOL · 03",
+    name: "Marketing & SEO",
+    color: W.green,
+    icon: "📣",
+    body: "Plain-English SEO and email people read. Steady drip, not spam.",
+    price: "from £600/mo",
+    rot: -0.6,
+  },
+  {
+    tag: "TOOL · 04",
+    name: "Maintenance",
+    color: W.blue,
+    icon: "🛠",
+    body: "Updates, backups, tweaks. A real human to email when something breaks.",
+    price: "from £150/mo",
+    rot: 0.6,
+  },
 ];
 
 export default function ServicesPage() {
@@ -17,7 +56,8 @@ export default function ServicesPage() {
           What we <span className="accent">do.</span>
         </h1>
         <p>
-          We don&apos;t pretend to do everything. Here&apos;s the kit we keep within arm&apos;s reach.
+          We don&apos;t pretend to do everything. Here&apos;s the kit we keep
+          within arm&apos;s reach.
         </p>
       </div>
 
@@ -47,8 +87,12 @@ export default function ServicesPage() {
       </div>
 
       <div className="services-footer">
-        <Link href="/our-work" className="btn-dark">See our work →</Link>
-        <Link href="/get-a-quote" className="btn-ghost">Get a quote</Link>
+        <Link href="/our-work" className="btn-dark">
+          See our work →
+        </Link>
+        <Link href="/get-a-quote" className="btn-ghost">
+          Get a quote
+        </Link>
       </div>
     </div>
   );

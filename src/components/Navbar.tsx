@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useId, useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -13,14 +14,31 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const open = menuPath === pathname;
+  const menuId = useId();
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Main">
       <Link href="/" className="navbar__wordmark">
         <div className="navbar__icon">tt</div>
         <div className="navbar__name">there and then</div>
       </Link>
-      <div className="navbar__links">
+
+      <button
+        type="button"
+        className="navbar__toggle"
+        aria-expanded={open}
+        aria-controls={menuId}
+        onClick={() => setMenuPath(open ? null : pathname)}
+      >
+        {open ? "Close" : "Menu"}
+      </button>
+
+      <div
+        id={menuId}
+        className={`navbar__links${open ? " navbar__links--open" : ""}`}
+      >
         {navItems.map((item) => {
           const isActive =
             item.href === "/"

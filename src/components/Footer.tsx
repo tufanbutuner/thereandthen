@@ -1,8 +1,14 @@
-export default function Footer() {
+type FooterProps = {
+  email: string;
+};
+
+export default function Footer({ email }: FooterProps) {
   return (
-    <div className="footer">
-      <p>info@therenthen.co.uk</p>
-      <p>London, United Kingdom</p>
-    </div>
+    <footer className="footer">
+      <p>
+        <a href={`mailto:${email}`}>{email}</a>
+      </p>
+      <p>Hackney, London, United Kingdom</p>
+    </footer>
   );
 }

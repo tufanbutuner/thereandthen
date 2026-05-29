@@ -1,5 +1,12 @@
-import Link from "next/link";
 import { W } from "@/utils/themes";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Work",
+  description:
+    "Case studies from real projects — La Planchette, Candy Crown, and more small-business work.",
+};
 
 const studies = [
   {
@@ -7,7 +14,8 @@ const studies = [
     url: "https://laplanchette.uk",
     color: W.peach,
     emoji: "🍷",
-    problem: "Independent wine bar in Windsor with a loyal local crowd but no real web presence to match the warmth of the place.",
+    problem:
+      "Independent wine bar in Windsor with a loyal local crowd but no real web presence to match the warmth of the place.",
     did: ["New website build", "Brand identity", "Online table bookings"],
     result: "Fully booked most weekends",
     quote: '"Allez les amis!" — La Planchette, Windsor',
@@ -18,8 +26,13 @@ const studies = [
     url: "https://thecandycrown.com",
     color: W.pink,
     emoji: "🍬",
-    problem: "Sweet treats brand needed a cohesive identity and an organised online shop that matched the fun of the product.",
-    did: ["Brand identity & artwork", "Shopify website build", "Category catalogue & site structure"],
+    problem:
+      "Sweet treats brand needed a cohesive identity and an organised online shop that matched the fun of the product.",
+    did: [
+      "Brand identity & artwork",
+      "Shopify website build",
+      "Category catalogue & site structure",
+    ],
     result: "thecandycrown.com",
     quote: '"Looks good enough to eat." — Candy Crown',
     rot: 0.4,
@@ -32,11 +45,13 @@ export default function OurWorkPage() {
       <div className="work-header">
         <div className="section-label">(OUR WORK)</div>
         <h1 className="page-heading">
-          Things we&apos;ve<br />
+          Things we&apos;ve
+          <br />
           <span className="accent">made before.</span>
         </h1>
         <p>
-          Working notes from real projects. We keep them messy on purpose — it&apos;s how the work actually happens.
+          Working notes from real projects. We keep them messy on purpose —
+          it&apos;s how the work actually happens.
         </p>
       </div>
 

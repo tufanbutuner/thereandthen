@@ -1,22 +1,61 @@
 "use client";
 
-import { useState } from "react";
 import { W } from "@/utils/themes";
+import { useState } from "react";
 
 const stepsDef = [
-  { key: "what", label: "What are you up to?", placeholder: "I run a café in Hackney…", color: W.peach },
-  { key: "who", label: "Who's it for?", placeholder: "Locals, young families, bike commuters…", color: W.lilac },
-  { key: "budget", label: "Rough budget?", placeholder: "£3–5k for the site, maybe more later…", color: W.green, options: ["< £1k", "£1–3k", "£3–10k", "£10k+", "Need help scoping"] },
-  { key: "when", label: "When do you need it?", placeholder: "Soft launch in 6 weeks, ideally", color: W.yellow, options: ["ASAP", "1–2 months", "3+ months", "Flexible"] },
-  { key: "name", label: "What's your name?", placeholder: "Daisy", color: W.pink },
-  { key: "email", label: "Where can we reply?", placeholder: "you@thing.com", color: W.blue },
+  {
+    key: "what",
+    label: "What are you up to?",
+    placeholder: "I run a café in Hackney…",
+    color: W.peach,
+  },
+  {
+    key: "who",
+    label: "Who's it for?",
+    placeholder: "Locals, young families, bike commuters…",
+    color: W.lilac,
+  },
+  {
+    key: "budget",
+    label: "Rough budget?",
+    placeholder: "£3–5k for the site, maybe more later…",
+    color: W.green,
+    options: ["< £1k", "£1–3k", "£3–10k", "£10k+", "Need help scoping"],
+  },
+  {
+    key: "when",
+    label: "When do you need it?",
+    placeholder: "Soft launch in 6 weeks, ideally",
+    color: W.yellow,
+    options: ["ASAP", "1–2 months", "3+ months", "Flexible"],
+  },
+  {
+    key: "name",
+    label: "What's your name?",
+    placeholder: "Daisy",
+    color: W.pink,
+  },
+  {
+    key: "email",
+    label: "Where can we reply?",
+    placeholder: "you@thing.com",
+    color: W.blue,
+  },
 ];
 
 type FormData = Record<string, string>;
 
 export default function GetAQuotePage() {
   const [step, setStep] = useState(0);
-  const [form, setForm] = useState<FormData>({ what: "", who: "", budget: "", when: "", name: "", email: "" });
+  const [form, setForm] = useState<FormData>({
+    what: "",
+    who: "",
+    budget: "",
+    when: "",
+    name: "",
+    email: "",
+  });
   const [error, setError] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState(false);
@@ -25,7 +64,10 @@ export default function GetAQuotePage() {
   const done = step >= stepsDef.length;
 
   const handleNext = async () => {
-    if (!form[current.key].trim()) { setError(true); return; }
+    if (!form[current.key].trim()) {
+      setError(true);
+      return;
+    }
     setError(false);
     if (step === stepsDef.length - 1) {
       setSending(true);
@@ -56,7 +98,8 @@ export default function GetAQuotePage() {
             Got it, <span className="accent">{form.name || "friend"}.</span>
           </h1>
           <p>
-            Your brief is on the corkboard. We&apos;ll come back tomorrow with sketches, questions, and an honest &quot;yes / no / maybe.&quot;
+            Your brief is on the corkboard. We&apos;ll come back tomorrow with
+            sketches, questions, and an honest &quot;yes / no / maybe.&quot;
           </p>
 
           <div className="quote-done__receipts">
@@ -71,8 +114,12 @@ export default function GetAQuotePage() {
                   transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (1 + i)}deg)`,
                 }}
               >
-                <div className="quote-done__receipt-label">{s.label.toUpperCase()}</div>
-                <div className="quote-done__receipt-value">{form[s.key] || "—"}</div>
+                <div className="quote-done__receipt-label">
+                  {s.label.toUpperCase()}
+                </div>
+                <div className="quote-done__receipt-value">
+                  {form[s.key] || "—"}
+                </div>
               </div>
             ))}
           </div>
@@ -81,7 +128,14 @@ export default function GetAQuotePage() {
             className="btn-ghost"
             onClick={() => {
               setStep(0);
-              setForm({ what: "", who: "", budget: "", when: "", name: "", email: "" });
+              setForm({
+                what: "",
+                who: "",
+                budget: "",
+                when: "",
+                name: "",
+                email: "",
+              });
             }}
           >
             Send another
@@ -94,11 +148,16 @@ export default function GetAQuotePage() {
   return (
     <div className="corkboard">
       <div className="quote-header">
-        <div className="section-label">(GET A QUOTE · {step + 1} / {stepsDef.length})</div>
+        <div className="section-label">
+          (GET A QUOTE · {step + 1} / {stepsDef.length})
+        </div>
         <h1 className="page-heading">
           Tell us about <span className="accent">your project.</span>
         </h1>
-        <p>Six small questions, sticky notes for answers. No essays. We&apos;ll figure out the rest together.</p>
+        <p>
+          Six small questions, sticky notes for answers. No essays. We&apos;ll
+          figure out the rest together.
+        </p>
       </div>
 
       <div className="quote-progress">
@@ -107,7 +166,8 @@ export default function GetAQuotePage() {
             key={s.key}
             className="quote-progress__dot"
             style={{
-              background: i < step ? W.orange : i === step ? W.ink : `${W.ink}20`,
+              background:
+                i < step ? W.orange : i === step ? W.ink : `${W.ink}20`,
             }}
           />
         ))}
@@ -126,46 +186,82 @@ export default function GetAQuotePage() {
           <div className="quote-card__question">{current.label}</div>
 
           {current.options ? (
-            <div className="quote-card__options">
+            <div
+              className="quote-card__options"
+              role="group"
+              aria-label={current.label}
+            >
               {current.options.map((o) => (
                 <button
                   key={o}
+                  type="button"
+                  aria-pressed={form[current.key] === o}
                   className={`quote-card__option${form[current.key] === o ? " quote-card__option--selected" : ""}`}
-                  onClick={() => { setForm({ ...form, [current.key]: o }); setError(false); }}
+                  onClick={() => {
+                    setForm({ ...form, [current.key]: o });
+                    setError(false);
+                  }}
                 >
                   {o}
                 </button>
               ))}
             </div>
           ) : (
-            <input
-              autoFocus
-              value={form[current.key]}
-              onChange={(e) => { setForm({ ...form, [current.key]: e.target.value }); setError(false); }}
-              onKeyDown={(e) => { if (e.key === "Enter") handleNext(); }}
-              placeholder={current.placeholder}
-              className="quote-card__input"
-            />
+            <label className="quote-card__field">
+              <span className="visually-hidden">{current.label}</span>
+              <input
+                autoFocus
+                value={form[current.key]}
+                onChange={(e) => {
+                  setForm({ ...form, [current.key]: e.target.value });
+                  setError(false);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleNext();
+                }}
+                placeholder={current.placeholder}
+                className="quote-card__input"
+                aria-invalid={error}
+              />
+            </label>
           )}
 
           {error && (
-            <div className="quote-card__error">Please fill this in before continuing.</div>
+            <div className="quote-card__error">
+              Please fill this in before continuing.
+            </div>
           )}
 
           {sendError && (
-            <div className="quote-card__error">Something went wrong sending your brief. Check your connection and try again.</div>
+            <div className="quote-card__error">
+              Something went wrong sending your brief. Check your connection and
+              try again.
+            </div>
           )}
 
           <div className="quote-card__nav">
             <button
+              type="button"
               className="quote-card__back"
               disabled={step === 0}
-              onClick={() => { setStep(Math.max(0, step - 1)); setError(false); }}
+              onClick={() => {
+                setStep(Math.max(0, step - 1));
+                setError(false);
+              }}
             >
               ← back
             </button>
-            <button className="btn-dark" onClick={handleNext} disabled={sending}>
-              {sending ? "Sending…" : step === stepsDef.length - 1 ? "Send →" : "next →"}
+            <button
+              type="button"
+              className="btn-dark"
+              onClick={handleNext}
+              disabled={sending}
+            >
+              {sending
+                ? "Sending…"
+                : step === stepsDef.length - 1
+                  ? "Send →"
+                  : "next →"}
             </button>
           </div>
         </div>
